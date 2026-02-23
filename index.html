@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PETUALANGAN HUTAN · platform hop</title>
+   
+</head>
+<body>
+
+<div class="game-wrapper">
+    <!-- PANEL AKUN LOKAL -->
+    <div class="account-panel">
+        <div class="player-id-section">
+            <div class="input-icon">
+                <i>🐾</i>
+                <input type="text" id="playerNameInput" placeholder="nama akun" maxlength="20" value="Adzkiya">
+            </div>
+            <div class="icon-selector" id="iconSelector">
+                <span class="icon-option selected" data-icon="🐰">🐰</span>
+                <span class="icon-option" data-icon="🐸">🐸</span>
+                <span class="icon-option" data-icon="🦊">🦊</span>
+                <span class="icon-option" data-icon="🐱">🐱</span>
+                <span class="icon-option" data-icon="🐼">🐼</span>
+            </div>
+        </div>
+        <div class="highscore-local" id="highscoreDisplay">
+            <span>🏆</span> 
+            <span id="highscoreValue" style="display: flex; align-items: center; gap: 5px;">
+                0
+            </span>
+        </div>
+    </div>
+
+    <!-- GAME CANVAS + STATUS -->
+    <div class="canvas-container">
+        <div class="status-bar">
+            <div class="lives" id="livesDisplay">❤️ x 6</div>
+            <div id="scoreDisplay">🏁 0</div>
+            <div id="timerDisplay" style="font-size:1rem;">⏰ 30s</div>
+        </div>
+        <canvas id="gameCanvas" width="1000" height="450"></canvas>
+        <div style="text-align:center; color:#3d2b12; margin-top:8px; font-size:1.2rem;">
+            ← → gerak, ↑ lompat, ↓ merunduk
+        </div>
+    </div>
+
+
+    <div class="quiz-modal-overlay" id="quizModalOverlay">
+        <div class="quiz-modal">
+            <div class="quiz-header">
+                <i>📚</i> <span class="question" id="modalQuizQuestion">Tebak nama hewan: ?</span>
+            </div>
+            <div class="options-grid" id="modalQuizOptions"></div>
+            <div class="quiz-feedback" id="modalQuizFeedback">
+                <span id="modalFeedbackText"></span>
+            </div>
+            <div style="display: flex; justify-content: center; margin-top: 20px;">
+                <button class="reset-btn" id="modalResetGameBtn">🔄 Main Lagi</button>
+            </div>
+        </div>        
+    </div>
+
+    <footer>🐘 AYO BERPETUALANG, hindari hewan, jawab quiz untuk ekstra BONUS!</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
